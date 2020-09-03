@@ -1,7 +1,5 @@
 object gimenez {
-    var fondo = 300000
-
-    method fondo() { return fondo }
+    var property fondo = 300000
 
     method pagarSueldo(persona) {
         fondo -= persona.sueldo()
@@ -9,9 +7,8 @@ object gimenez {
 }
 
 object galvan {
-    var sueldo = 15000
+    var property sueldo = 15000
 
-    method sueldo() { return sueldo }
     method sueldo(valor) { sueldo = valor }
 }
 
