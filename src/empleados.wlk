@@ -3,7 +3,7 @@ object gimenez {
 
     method pagarSueldo(persona) {
         fondo -= persona.sueldo()
-        persona.pagar()
+        persona.cobrar()
     }
 }
 
@@ -12,7 +12,7 @@ object galvan {
     var property deuda = 0
     var property dinero = 0
 
-    method pagar() {
+    method cobrar() {
         deuda -= sueldo
         if (deuda < 0) {
             dinero -= deuda // - * - = +
@@ -37,7 +37,7 @@ object baigorria {
 
     method sueldo() { return empanadasVendidas * 15 }
 
-    method pagar() {
+    method cobrar() {
         totalCobrado += self.sueldo()
         empanadasVendidas = 0
     }
