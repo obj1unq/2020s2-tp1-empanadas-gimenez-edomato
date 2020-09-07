@@ -13,19 +13,15 @@ object galvan {
     var property dinero = 0
 
     method cobrar() {
-        deuda -= sueldo
-        if (deuda < 0) {
-            dinero -= deuda // - * - = +
-            deuda = 0
-        }
+        const dineroActual = dinero + sueldo
+        dinero = 0.max(dineroActual - deuda)
+        deuda = 0.max(deuda - dineroActual)
     }
 
     method gastar(cuanto) {
-        dinero -= cuanto
-        if (dinero < 0) {
-            deuda -= dinero // - * - = +
-            dinero = 0
-        }
+        const deudaActual = deuda + cuanto
+        deuda = 0.max(deudaActual - dinero)
+        dinero = 0.max(dinero - deudaActual)
     }
 }
 
